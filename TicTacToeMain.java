@@ -4,7 +4,7 @@ public class TicTacToeMain {
 
 	public static void main(String[] args) {
 		TicTacToeGame ticTacToe = new TicTacToeGame();
-		ticTacToe.ticTacToeBoard();
+		char boardArr[]= ticTacToe.ticTacToeBoard();
 		char userSelect = ticTacToe.selectSymbol();
 		char symbolCom;
         if(userSelect =='X') {
@@ -13,7 +13,8 @@ public class TicTacToeMain {
         else {
         	symbolCom='X';
         }
-        System.out.println("computer symbol"+ symbolCom);
+        System.out.println("computer symbol "+ symbolCom);
+        ticTacToe.showBoard(boardArr);
     
 
 	}
