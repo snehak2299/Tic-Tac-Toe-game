@@ -39,7 +39,7 @@ public class TicTacToeGame {
 		return false;
 	}
 	
-	public int checkPosition(char boardArr[],char symbolP) {
+	public int checkPosition(char boardArr[],char player) {
 		Scanner sc = new Scanner(System.in);
 		int position =0;
 		while(true) {
@@ -47,7 +47,7 @@ public class TicTacToeGame {
 			position = sc.nextInt();
 			if (position <= 9 || position>0) {
 				if (emptyPosition(boardArr, position)) {
-					return position;
+					boardArr[position] = player;
 				}
 				else
 				{
