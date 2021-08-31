@@ -15,13 +15,15 @@ public class TicTacToeMain {
         }
         System.out.println("computer symbol "+ symbolCom);
         ticTacToe.showBoard(board);
-        ticTacToe.checkPosition(board,userSelect);
+       // ticTacToe.checkPosition(board,userSelect);
         if (ticTacToe.toss()) {
 			board = ticTacToe.checkPosition(board,userSelect);
 		}
 		else board = ticTacToe.checkPosition(board, symbolCom);
 		ticTacToe.showBoard(board);
-    
+		ticTacToe.checkPosition(board,userSelect);
+		ticTacToe.checkWin(board);
 	}
+	 
 
 }

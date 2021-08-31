@@ -70,9 +70,32 @@ public class TicTacToeGame {
 		}
 		
 	
-			
+	}
+	public boolean checkWin(char[] boardArr) {
+		if(boardArr[1] == boardArr[2] && boardArr[2] == boardArr[3] && boardArr[3]!= '_') return true;
+		else if(boardArr[1] == boardArr[5] && boardArr[5] == boardArr[9] && boardArr[9]!= '_') return true;
+		else if(boardArr[1] == boardArr[4] && boardArr[4] == boardArr[7] && boardArr[7]!= '_') return true;
+		else if(boardArr[2] == boardArr[5] && boardArr[5] == boardArr[8] && boardArr[8]!= '_') return true;
+		else if(boardArr[3] == boardArr[5] && boardArr[5] == boardArr[7] && boardArr[7]!= '_') return true;
+		else if(boardArr[3] == boardArr[6] && boardArr[6] == boardArr[9] && boardArr[9]!= '_') return true;
+		else if(boardArr[4] == boardArr[5] && boardArr[5] == boardArr[6] && boardArr[6]!= '_') return true;
+		else if(boardArr[7] == boardArr[8] && boardArr[8] == boardArr[9] && boardArr[9]!= '_') return true;
+		return false;
 	}
 	
-	
+	private boolean checkPlayerWin(char[] boardArr,char player) {
+		int size = boardArr.length;
+		for(int i=1;i<size;i++) {
+			if(boardArr[i] == '_') {
+				boardArr[i] = player;
+				if(checkWin(boardArr)) {
+					checkPosition(boardArr,player);
+					return true;
+				}
+				else boardArr[i] = '_';
+			}
+		}		
+		return false;
+	}
 	
 }
