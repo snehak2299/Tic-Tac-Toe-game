@@ -16,7 +16,11 @@ public class TicTacToeMain {
         System.out.println("computer symbol "+ symbolCom);
         ticTacToe.showBoard(board);
         ticTacToe.checkPosition(board,userSelect);
-        //ticTacToe.showBoard(board);
+        if (ticTacToe.toss()) {
+			board = ticTacToe.checkPosition(board,userSelect);
+		}
+		else board = ticTacToe.checkPosition(board, symbolCom);
+		ticTacToe.showBoard(board);
     
 	}
 

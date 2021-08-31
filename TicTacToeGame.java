@@ -30,6 +30,17 @@ public class TicTacToeGame {
 		}
 		
 	}
+	public boolean toss() {
+		int toss = (int)(Math.random()*10)%2;
+		if(toss == 0) {
+			System.out.println("player won the toss");
+			return true;
+		}
+		else {
+			System.out.println("player loss the toss");
+			return false;
+		}
+	}
 	public boolean emptyPosition(char boardArr[], int position) {
 		for (int i=1;i<boardArr.length;i++) {
 			if (i==position && boardArr[i]=='_') {
@@ -39,7 +50,7 @@ public class TicTacToeGame {
 		return false;
 	}
 	
-	public int checkPosition(char boardArr[],char player) {
+	public char[] checkPosition(char boardArr[],char player) {
 		Scanner sc = new Scanner(System.in);
 		int position =0;
 		while(true) {
@@ -54,6 +65,7 @@ public class TicTacToeGame {
 					System.out.println("Entered Index is not Free");
 				}
 			}
+			return boardArr;
 			 
 		}
 		
