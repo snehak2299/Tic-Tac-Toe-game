@@ -1,4 +1,5 @@
 package com.brideglab.tictactoe;
+import java.util.Scanner;
 
 public class TicTacToeMain {
 
@@ -33,7 +34,9 @@ public class TicTacToeMain {
 				}
 			ticTacToe.checkWin(board);
 			ticTacToe.computerMove(board, symbolCom);
-			
+			System.out.println("you want to play game one more time: 1.Yes 2.No"); //ask for one more game
+			Scanner sc = new Scanner(System.in);
+			if (sc.nextInt()==2) break;
 		}
 	}
 	 
