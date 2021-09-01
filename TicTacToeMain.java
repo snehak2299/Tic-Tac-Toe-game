@@ -23,11 +23,17 @@ public class TicTacToeMain {
 		ticTacToe.showBoard(board);
 		ticTacToe.checkPosition(board,userSelect);
 		System.out.print("Computer ");
-		board = ticTacToe.computerMove(board, symbolCom);
-		if (ticTacToe.checkPlayerWin(board,symbolCom)) {
-			System.out.println("Computer won.");
-		ticTacToe.checkWin(board);
-		ticTacToe.computerMove(board, symbolCom);
+		while(true) {
+			board = ticTacToe.computerMove(board, symbolCom);
+			if (ticTacToe.checkPlayerWin(board,symbolCom)) {
+				System.out.println("Computer won.");
+			}
+			else {
+					System.out.println("player won");
+				}
+			ticTacToe.checkWin(board);
+			ticTacToe.computerMove(board, symbolCom);
+			
 		}
 	}
 	 
