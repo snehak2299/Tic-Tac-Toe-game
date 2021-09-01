@@ -53,6 +53,7 @@ public class TicTacToeGame {
 	public char[] checkPosition(char boardArr[],char player) {
 		Scanner sc = new Scanner(System.in);
 		int position =0;
+		//char player = 0;
 		while(true) {
 			System.out.println("\nEnter the index to set value from 1 to 9: ");
 			position = sc.nextInt();
@@ -71,6 +72,18 @@ public class TicTacToeGame {
 		
 	
 	}
+	public char[] computerMove(char[] board, char gameCharacter) { //UC8
+			
+			for(int i=1;i<board.length;i++) {
+				char[] boardArr = board;
+					if (checkWin(boardArr)) {
+						board[i]=gameCharacter;
+						return board;
+					}
+				
+			}
+			return board;
+		}
 	public boolean checkWin(char[] boardArr) {
 		if(boardArr[1] == boardArr[2] && boardArr[2] == boardArr[3] && boardArr[3]!= '_') return true;
 		else if(boardArr[1] == boardArr[5] && boardArr[5] == boardArr[9] && boardArr[9]!= '_') return true;
