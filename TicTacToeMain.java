@@ -22,8 +22,13 @@ public class TicTacToeMain {
 		else board = ticTacToe.checkPosition(board, symbolCom);
 		ticTacToe.showBoard(board);
 		ticTacToe.checkPosition(board,userSelect);
+		System.out.print("Computer ");
+		board = ticTacToe.computerMove(board, symbolCom);
+		if (ticTacToe.checkPlayerWin(board,symbolCom)) {
+			System.out.println("Computer won.");
 		ticTacToe.checkWin(board);
 		ticTacToe.computerMove(board, symbolCom);
+		}
 	}
 	 
 

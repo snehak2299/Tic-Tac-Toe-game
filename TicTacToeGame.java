@@ -95,7 +95,7 @@ public class TicTacToeGame {
 		else if(boardArr[7] == boardArr[8] && boardArr[8] == boardArr[9] && boardArr[9]!= '_') return true;
 		return false;
 	}
-	private int opponentWin(char[] board,char opponentCharacter,char gameCharacter) {
+	private int opponentWin(char[] board,char opponentCharacter,char gameCharacter) { //Uc9
 			
 			for(int i=1;i<board.length;i++) {
 				if(board[i] == '_') {
@@ -109,7 +109,7 @@ public class TicTacToeGame {
 			return 0;
 		}
 	
-	private boolean checkPlayerWin(char[] boardArr,char player) {
+	public boolean checkPlayerWin(char[] boardArr,char player) {
 		int size = boardArr.length;
 		for(int i=1;i<size;i++) {
 			if(boardArr[i] == '_') {
