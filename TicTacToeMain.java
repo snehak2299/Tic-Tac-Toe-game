@@ -23,6 +23,7 @@ public class TicTacToeMain {
 		ticTacToe.showBoard(board);
 		ticTacToe.checkPosition(board,userSelect);
 		ticTacToe.checkWin(board);
+		ticTacToe.computerMove(board, symbolCom);
 	}
 	 
 
