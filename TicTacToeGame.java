@@ -72,13 +72,26 @@ public class TicTacToeGame {
 		
 	
 	}
-	public char[] computerMove(char[] board, char gameCharacter) { //UC8
+	public char[] computerMove(char[] board, char gameCharacter) { //UC8 && UC11
 			
 			for(int i=1;i<board.length;i++) {
 				char[] boardArr = board;
 					if (checkWin(boardArr)) {
 						board[i]=gameCharacter;
 						return board;
+					}
+					if(board[1] == '_' || board[3] == '_' || board[7] == '_' || board[9] == '_') {
+						if(board[1] == '_') board[1] = gameCharacter;
+						else if (board[3] == '_')  board[3] = gameCharacter;
+						else if (board[7] == '_')  board[7] = gameCharacter;
+						else board[9] = gameCharacter;
+					}
+					else if(board[5] == '_') board[5] = gameCharacter;
+					else {
+						if(board[2] == '_') board[2] = gameCharacter;
+						else if (board[4] == '_')  board[4] = gameCharacter;
+						else if (board[6] == '_')  board[6] = gameCharacter;
+						else board[8] = gameCharacter;
 					}
 				
 			}
